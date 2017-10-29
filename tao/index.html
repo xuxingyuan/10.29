@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script>
+$(function(){
+	$.ajax({
+		url:"http://localhost:3000/item/list",
+		type:'GET',
+		data:{},
+		success:function(e){
+			for(var i=0;i<e.length;i++){
+				console.log(1);
+				$("body").append("<a href='detail.html?id="+e[i].id+"'>"+e[i].name+"</a><br>");
+			}
+		}
+	})
+})
+</script>
